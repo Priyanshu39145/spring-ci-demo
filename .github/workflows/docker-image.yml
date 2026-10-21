@@ -56,7 +56,7 @@ jobs:
 
 #Building the image step using raw command ---- again the dockerhub username is not revealed
     - name: Build an image
-      run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/spring-ci-demo:latest
+      run: docker build --platform linux/amd64 -t ${{ secrets.DOCKERHUB_USERNAME }}/spring-ci-demo:latest .
 
  #Pushing the image to dockerhub by raw command
     - name: Push the image to dockerhub
